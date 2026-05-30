@@ -1,0 +1,86 @@
+/* ============================================================
+   DESIGN TOKENS — colors_and_type.css
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ── Fonts ── */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+
+  /* ── Colors: base ── */
+  --c-bg:      #0a0a0b;
+  --c-fg:      #f0ece8;
+  --c-fg-2:    #a09590;
+  --c-fg-3:    #6b605a;
+  --c-fg-4:    #4a403a;
+  --c-surface: #111114;
+
+  /* ── Colors: lines / borders ── */
+  --c-line:        rgba(255,255,255,0.08);
+  --c-line-strong: rgba(255,255,255,0.13);
+  --c-line-faint:  rgba(255,255,255,0.05);
+
+  /* ── Colors: accent (coral-orange) ── */
+  --c-accent:       #ff5c35;
+  --c-accent-hover: #ff7040;
+  --c-accent-press: #e0451f;
+  --c-accent-line:  rgba(255,92,53,0.30);
+  --c-accent-wash:  rgba(255,92,53,0.08);
+
+  /* ── Colors: semantic ── */
+  --c-online: #35d07f;
+
+  /* ── Layout ── */
+  --maxw:   1160px;
+  --gutter: clamp(20px, 5vw, 80px);
+
+  /* ── Spacing (4px base) ── */
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  20px;
+  --sp-6:  24px;
+  --sp-7:  28px;
+  --sp-8:  32px;
+  --sp-10: 48px;
+  --sp-12: 64px;
+  --sp-16: 96px;
+
+  /* ── Font sizes ── */
+  --fs-display:  clamp(2.8rem, 7vw, 5.5rem);
+  --fs-h1:       clamp(1.8rem, 3vw, 2.5rem);
+  --fs-h2:       clamp(1.4rem, 2.4vw, 2rem);
+  --fs-h3:       1.1rem;
+  --fs-body-lg:  1.125rem;
+  --fs-body:     1rem;
+  --fs-sm:       0.875rem;
+  --fs-xs:       0.75rem;
+
+  /* ── Font weights ── */
+  --fw-bold: 700;
+  --fw-semi: 600;
+  --fw-med:  500;
+  --fw-reg:  400;
+
+  /* ── Letter spacing ── */
+  --ls-tight: -0.03em;
+  --ls-snug:  -0.02em;
+  --ls-label:  0.12em;
+
+  /* ── Line heights ── */
+  --lh-tight:   1.1;
+  --lh-snug:    1.2;
+  --lh-relaxed: 1.7;
+
+  /* ── Border radii ── */
+  --r-sm:  4px;
+  --r-md:  8px;
+  --r-lg:  14px;
+  --r-pill: 999px;
+
+  /* ── Easing ── */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
