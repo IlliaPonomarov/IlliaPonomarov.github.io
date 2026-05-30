@@ -24,7 +24,7 @@ function App() {
     <React.Fragment>
       <div className="bg-texture"></div>
       <ScrollBar />
-      <Nav />
+      <Nav d={d} />
       <main>
         <Hero d={d} />
         <Metrics d={d} />

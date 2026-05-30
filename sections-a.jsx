@@ -1,6 +1,6 @@
 /* sections-a.jsx — Nav, Hero, About, Experience */
 
-function Nav() {
+function Nav({ d }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   useEffect(() => {
@@ -12,39 +12,55 @@ function Nav() {
     document.body.style.overflow = open ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [open]);
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === "Escape") setOpen(false); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
   const links = [
     ["01", "About", "#about"], ["02", "Work", "#experience"],
     ["03", "Projects", "#projects"], ["04", "Writing", "#writing"],
+    ["05", "Contact", "#contact"],
   ];
   return (
-    <nav className={`nav ${scrolled ? "scrolled" : ""} ${open ? "menu-open" : ""}`}>
-      <div className="nav-inner">
-        <a className="nav-logo" href="#top" onClick={() => setOpen(false)}>
-          <b>Illia Ponomarov</b>
-        </a>
-        <div className="nav-links">
-          {links.map(([n, t, h]) => (
-            <a key={h} href={h}><span className="n">{n}</span>{t}</a>
-          ))}
+    <React.Fragment>
+      <nav className={`nav ${scrolled ? "scrolled" : ""} ${open ? "menu-open" : ""}`}>
+        <div className="nav-inner">
+          <a className="nav-logo" href="#top" onClick={() => setOpen(false)}>
+            <img src="../../assets/logo-monogram.svg" alt="Illia Ponomarov" />
+            <b>Illia Ponomarov</b>
+          </a>
+          <div className="nav-links">
+            {links.slice(0, 4).map(([n, t, h]) => (
+              <a key={h} href={h}><span className="n">{n}</span>{t}</a>
+            ))}
+          </div>
+          <a className="nav-cta" href="#contact">Get in touch</a>
+          <button className="nav-burger" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen((o) => !o)}>
+            <span></span><span></span>
+          </button>
         </div>
-        <a className="nav-cta" href="#contact">Get in touch</a>
-        <button className="nav-burger" aria-label="Toggle menu" aria-expanded={open} onClick={() => setOpen((o) => !o)}>
-          <span></span><span></span>
-        </button>
-      </div>
-      <div className={`nav-sheet ${open ? "open" : ""}`}>
-        <div className="nav-sheet-links">
+      </nav>
+
+      <div className={`nav-sheet ${open ? "open" : ""}`} aria-hidden={!open}>
+        <nav className="nav-sheet-links">
           {links.map(([n, t, h], i) => (
-            <a key={h} href={h} onClick={() => setOpen(false)} style={{ transitionDelay: `${open ? 80 + i * 50 : 0}ms` }}>
-              <span className="n">{n}</span>{t}
+            <a key={h} href={h} onClick={() => setOpen(false)} style={{ transitionDelay: `${open ? 120 + i * 55 : 0}ms` }}>
+              <span className="n">{n}</span><span className="t">{t}</span>
+              <span className="ar">→</span>
             </a>
           ))}
-          <a href="#contact" className="nav-sheet-cta" onClick={() => setOpen(false)} style={{ transitionDelay: `${open ? 80 + links.length * 50 : 0}ms` }}>
-            Get in touch <span className="ar">→</span>
-          </a>
+        </nav>
+        <div className="nav-sheet-foot" style={{ transitionDelay: `${open ? 120 + links.length * 55 : 0}ms` }}>
+          <a href={`mailto:${d.email}`}>{d.email}</a>
+          <div className="nav-sheet-social">
+            <a href={d.linkedin} target="_blank" rel="noopener">LinkedIn</a>
+            <span>·</span>
+            <a href={d.medium} target="_blank" rel="noopener">Medium</a>
+          </div>
         </div>
       </div>
-    </nav>
+    </React.Fragment>
   );
 }
 

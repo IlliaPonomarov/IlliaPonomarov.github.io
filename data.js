@@ -9,7 +9,7 @@ window.DATA = {
   // NOTE: exact URLs were not in the CV — update these.
   linkedin: "https://www.linkedin.com/",
   medium: "https://medium.com/",
-  cv: "Illia_Ponomarov_Java_Software_Engineer.pdf",
+  cv: "../../uploads/Illia_Ponomarov_Java_Software_Engineer.pdf",
 
   lede: "I build and harden high-load backend systems — from biometric platforms processing tens of millions of transactions a month to 20-year-old government infrastructure that can't go down.",
 

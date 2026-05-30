@@ -58,7 +58,7 @@ function Metric({ m }) {
 function Metrics({ d }) {
   return (
     <section className="metrics">
-      <div className="wrap" style={{ padding: 0 }}>
+      <div className="wrap">
         <div className="metrics-head">
           <span className="kicker" style={{ margin: 0 }}>Impact, measured</span>
           <span className="metrics-sub">Selected, real results from my work — receipts in the timeline below.</span>
@@ -147,6 +147,7 @@ function Contact({ d }) {
       <footer className="footer">
         <div className="wrap footer-inner">
           <div className="footer-left">
+            <img src="../../assets/logo-monogram.svg" alt="" style={{ width: 24, height: 24, borderRadius: 6 }} />
             <span>© {new Date().getFullYear()} {d.name}</span>
             <span style={{ color: "var(--c-fg-4)" }}>·</span>
             <span>{d.phone}</span>
