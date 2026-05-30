@@ -20,10 +20,6 @@ function Nav() {
     <nav className={`nav ${scrolled ? "scrolled" : ""} ${open ? "menu-open" : ""}`}>
       <div className="nav-inner">
         <a className="nav-logo" href="#top" onClick={() => setOpen(false)}>
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style={{borderRadius:"7px"}}>
-            <rect width="32" height="32" rx="7" fill="#ff5c35"/>
-            <text x="16" y="22" textAnchor="middle" fontFamily="system-ui" fontWeight="700" fontSize="16" fill="#170a05">IP</text>
-          </svg>
           <b>Illia Ponomarov</b>
         </a>
         <div className="nav-links">
