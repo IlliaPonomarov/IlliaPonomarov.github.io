@@ -27,7 +27,6 @@ function Nav({ d }) {
       <nav className={`nav ${scrolled ? "scrolled" : ""} ${open ? "menu-open" : ""}`}>
         <div className="nav-inner">
           <a className="nav-logo" href="#top" onClick={() => setOpen(false)}>
-            <img src="../../assets/logo-monogram.svg" alt="Illia Ponomarov" />
             <b>Illia Ponomarov</b>
           </a>
           <div className="nav-links">
